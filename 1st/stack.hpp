@@ -31,8 +31,8 @@ template<class T>
 Stack<T>::Stack(){
     vec = new vector<T>;
     if(vec == NULL){
-        cout<<"error|but try-catch remain to be done"<<endl;
-        exit(1);
+    	perrno("ERROR(Stack::Stack()):init vector faild !");
+        exit(EXIT_FAILURE);
     }
 }
 

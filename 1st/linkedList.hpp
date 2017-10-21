@@ -114,7 +114,7 @@ public:
 
 			return true;
 		}else{
-			cerr<<"WARNING(LL::remove()):failed to remove key from LinkedList !"<<endl;
+			perrno("WARNING(LL::remove()):failed to remove key from LinkedList !");
 
 			return false;
 		}
