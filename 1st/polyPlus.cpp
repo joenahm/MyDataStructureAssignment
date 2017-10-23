@@ -84,7 +84,7 @@ void sTol(const char* s, LL &l){ 	/* string to linkedList */
 			if( !stack.isEmpty() )
 				stack.pop();
 		}else{
-			perrno("ERROR(sTol()):poly is invalid !");
+			cerr << "ERROR(sTol()):poly is invalid !" << endl;
 			exit(EXIT_FAILURE);
 		}
 

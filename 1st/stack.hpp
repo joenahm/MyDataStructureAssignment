@@ -31,7 +31,7 @@ template<class T>
 Stack<T>::Stack(){
     vec = new vector<T>;
     if(vec == NULL){
-    	perrno("ERROR(Stack::Stack()):init vector faild !");
+    	cerr << "ERROR(Stack::Stack()):init vector faild !" << endl;
         exit(EXIT_FAILURE);
     }
 }
