@@ -17,6 +17,7 @@
 	If you want something different, check and modify that file.
  */
 #ifndef _STACK_H_
+#define _STACK_H_
 
 #include "stack_elem_type.h"
 #include "stack_storage.h"

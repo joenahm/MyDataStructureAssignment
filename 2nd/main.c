@@ -4,11 +4,12 @@
 #define MAX_STR 100
 
 int main(int argc, const char *argv[]){
-	char expStr[MAX_STR];
-	Stack stack;		//prepare the stack
-	stack_init(&stack);	//for numbers
+	Stack operator;
+	Stack number;
+	stack_init(&operator);
+	stack_init(&number);
 
-
+	exp_calc(&operator,&number);
 
 	return 0;
 }
