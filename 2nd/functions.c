@@ -40,7 +40,74 @@ double get_number(char *buffer, int *buffer_index){
 		power++;
 	}
 
+	*buffer_index = 0;
+
 	return temp;
+}
+
+double calculate(double value1, char operator, double value2){
+	double temp;
+
+	switch( operator ){
+		case '+':
+			temp = value1 + value2;
+			break;
+		case '-':
+			temp = value1 - value2;
+			break;
+		case '*':
+			temp = value1 * value2;
+			break;
+		case '/':
+			temp = value1 / value2;
+			break;
+		default:
+			fprintf(stderr, "ERROR(calculate):unknown operator \"%c\" !\n", operator);
+			exit(EXIT_FAILURE);
+	}
+
+	return temp;
+}
+
+char prority_comp(char op1, char op2){
+	char result;
+
+	if( op2=='+' || op2=='-' ){
+		if( op1=='(' || op1=='=' )
+			result = '<';
+		else
+			result = '>';
+	}else if( op2=='*' || op2=='/' ){
+		if( op1=='*' || op1=='/' || op1==')' )
+			result = '>';
+		else
+			result = '<';
+	}else if( op2 == '(' ){
+		if( op1==')' ){
+			fprintf(stderr, "ERROR(prority_comp):invalid expression ! \n");
+			exit(EXIT_FAILURE);
+		}else
+			result = '<';
+	}else if( op2 == ')' ){
+		if( op1 == '=' ){
+			fprintf(stderr, "ERROR(prority_comp):invalid expression ! \n");
+			exit(EXIT_FAILURE);
+		}else if( op1 == '(' )
+			result = '=';
+		else
+			result = '>';
+	}else if( op2 == '=' ){
+		if( op1=='(' || op1=='=' ){
+			fprintf(stderr, "ERROR(prority_comp):invalid expression ! \n");
+			exit(EXIT_FAILURE);
+		}else
+			result = '>';
+	}else{
+		fprintf(stderr, "ERROR(prority_comp):invalid expression ! \n");
+		exit(EXIT_FAILURE);
+	}
+
+	return result;
 }
 
 void exp_calc(Stack *ops, Stack *nus){
@@ -49,7 +116,7 @@ void exp_calc(Stack *ops, Stack *nus){
 	int is_buffer_empty = TRUE;
 	int buffer_index = 0;
 
-	stack_push(nus,0.0);
+	// stack_push(nus,0.0);
 
 	while( (in_val=getchar()) != '\n' ){
 		if( isdigit(in_val) ){
@@ -76,23 +143,42 @@ void exp_calc(Stack *ops, Stack *nus){
 
 			stack_push(nus,number);
 		}else if( isoper(in_val) ){
-			double number1,number2;
-			if( !is_buffer_empty ){
+			double number2;
+			if( !is_buffer_empty )
 				number2 = get_number(buffer,&buffer_index);
-				is_buffer_empty = TRUE;
-			}else{
+			else
 				number2 = stack_getTop(nus);
-				stack_pop(nus);
-			}
-			number1 = stack_getTop(nus);
-			stack_pop(nus);
 
-			if( in_val == '=' ){
-				stack_push(nus,calculate(number1,stack_getTop(ops),number2));
-				stack_pop(ops);
+			if(stack_isEmpty(ops)){
+				stack_push(ops,in_val);
+
+				if( !is_buffer_empty )
+					stack_push(nus,number2);
 			}else{
-				;
+				double number1 = stack_getTop(nus);
+
+				switch( prority_comp((char)stack_getTop(ops),in_val) ){
+					case '<':
+						stack_push(ops,in_val);
+						if( !is_buffer_empty )
+							stack_push(nus,number2);
+						break;
+					case '=':
+						stack_pop(ops);
+						if( !is_buffer_empty )
+							stack_push(nus,number2);
+						break;
+					case '>':
+						stack_push(nus,calculate(number1,(char)stack_getTop(ops),number2));
+						if( is_buffer_empty )
+							stack_pop(nus);
+						stack_pop(nus);
+						stack_pop(ops);
+						ungetc(in_val,stdin);
+				}
 			}
+			
+			is_buffer_empty = TRUE;
 		}else{
 			fprintf(stderr, "ERROR(exp_calc):invalid input \"%c\" !\n", in_val);
 			exit(EXIT_FAILURE);

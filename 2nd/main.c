@@ -11,5 +11,7 @@ int main(int argc, const char *argv[]){
 
 	exp_calc(&operator,&number);
 
+	printf("%f\n", stack_getTop(&number));
+
 	return 0;
 }
