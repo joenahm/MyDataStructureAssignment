@@ -9,7 +9,7 @@ int main(int argc, const char *argv[]){
 	stack_init(&operator);
 	stack_init(&number);
 
-	exp_calc(&operator,&number);
+	exp_eval(&operator,&number);
 
 	printf("%f\n", stack_getTop(&number));
 

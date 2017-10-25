@@ -110,7 +110,7 @@ char prority_comp(char op1, char op2){
 	return result;
 }
 
-void exp_calc(Stack *ops, Stack *nus){
+void exp_eval(Stack *ops, Stack *nus){
 	char in_val;
 	char buffer[MAX_BUFF];
 	int is_buffer_empty = TRUE;
@@ -126,7 +126,7 @@ void exp_calc(Stack *ops, Stack *nus){
 				buffer_index++;
 			}
 			else
-				fprintf(stderr, "WARNING(exp_calc):buffer[MAX_BUFF] for number storing is full !\n");
+				fprintf(stderr, "WARNING(exp_eval):buffer[MAX_BUFF] for number storing is full !\n");
 		}else if( in_val == '.' ){
 			char dec_val;
 			double number;
@@ -187,7 +187,7 @@ void exp_calc(Stack *ops, Stack *nus){
 			
 			is_buffer_empty = TRUE;
 		}else{
-			fprintf(stderr, "ERROR(exp_calc):invalid input \"%c\" !\n", in_val);
+			fprintf(stderr, "ERROR(exp_eval):invalid input \"%c\" !\n", in_val);
 			exit(EXIT_FAILURE);
 		}
 	}	
