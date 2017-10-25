@@ -177,7 +177,7 @@ void exp_calc(Stack *ops, Stack *nus){
 						stack_push(nus,calculate(number1,(char)stack_getTop(ops),number2));
 						stack_pop(ops);
 						
-						if( in_val != '=' )
+						if( in_val!='=' && in_val!=')' )
 							stack_push(ops,in_val);
 						else
 							ungetc(in_val,stdin);
