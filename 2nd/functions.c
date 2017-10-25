@@ -155,8 +155,6 @@ void exp_calc(Stack *ops, Stack *nus){
 				if( !is_buffer_empty )
 					stack_push(nus,number2);
 			}else{
-				double number1 = stack_getTop(nus);
-
 				switch( prority_comp((char)stack_getTop(ops),in_val) ){
 					case '<':
 						stack_push(ops,in_val);
@@ -169,12 +167,21 @@ void exp_calc(Stack *ops, Stack *nus){
 							stack_push(nus,number2);
 						break;
 					case '>':
-						stack_push(nus,calculate(number1,(char)stack_getTop(ops),number2));
+					{
 						if( is_buffer_empty )
 							stack_pop(nus);
+
+						double number1 = stack_getTop(nus);
 						stack_pop(nus);
+
+						stack_push(nus,calculate(number1,(char)stack_getTop(ops),number2));
 						stack_pop(ops);
-						ungetc(in_val,stdin);
+						
+						if( in_val != '=' )
+							stack_push(ops,in_val);
+						else
+							ungetc(in_val,stdin);
+					}
 				}
 			}
 			
