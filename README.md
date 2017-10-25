@@ -14,7 +14,7 @@ My data structure assignment at college
 - #### 主要文件（Main File）: polyPlus.cpp
 
 > ### #2nd
-- #### 名称（Name）		: 栈和队列的应用
+- #### 名称（Name）		: 栈和队列的应用（Application of Stack and Queue）
 - #### 题目（Question）	: 
 ```
 输入表达式,包含加减乘除和括号运算;
