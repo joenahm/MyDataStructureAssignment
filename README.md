@@ -1,5 +1,5 @@
 # MyDataStructureAssignment
-My data structure assignment at college
+数据结构作业(My data structure assignment at college)
 
 > ### #1st
 - #### 名称（Name） 		: 顺序表和链表的应用（Application of Sequence List and Link List）
