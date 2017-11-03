@@ -29,14 +29,30 @@ typedef struct SQLIST{
 } SqList;
 
 void sql_init(SqList *sql, int size);
+
 int sql_getLen(SqList *sql);
+
+void sql_setLen(SqList *sql, int newLength);
+
 int sql_getSize(SqList *sql);
+
 int sql_isEmpty(SqList *sql);
+
 int sql_isFull(SqList *sql);
+
 elem_type sql_get(SqList *sql, int index);
+
+/* same as the default assignment operation */
+void sql_set(SqList *sql, int index, elem_type value);
+ 
+/*	call sql_set() to accomplish the assignment operation,
+*  	then increase the length of sqlist */
 void sql_insert(SqList *sql, int index, elem_type value);
+
 int sql_grow(SqList *sql, int size);
+
 void sql_destroy(SqList *sql);
+
 /* remain to be done */
 
 #endif

@@ -20,6 +20,10 @@ int sql_getLen(SqList *sql){
 	return sql->length;
 }
 
+void sql_setLen(SqList *sql, int newLength){
+	sql->length = newLength;
+}
+
 int sql_getSize(SqList *sql){
 	return sql->size;
 }
@@ -52,10 +56,14 @@ elem_type sql_get(SqList *sql, int index){
 	return sql->elem[index];
 }
 
-void sql_insert(SqList *sql, int index, elem_type value){
+void sql_set(SqList *sql, int index, elem_type value){
 	assert(!sql_isFull(sql));
 
 	sql->elem[index] = value;
+}
+
+void sql_insert(SqList *sql, int index, elem_type value){
+	sql_set(sql,index,value);
 	sql->length++;
 }
 
