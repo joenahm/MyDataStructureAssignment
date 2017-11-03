@@ -7,4 +7,4 @@ int main(int argc, char const *argv[]){
 	printf("%d\n", sql_get(&sql1,0));
 
 	return 0;
- 
+ }
