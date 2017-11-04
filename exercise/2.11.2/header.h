@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "sequence-list/sqlist.h"
+#include "../public/sequence-list/sqlist.h"
 
 #endif

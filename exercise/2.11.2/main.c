@@ -48,7 +48,7 @@ int main(int argc, char const *argv[]){
 		sql_insert(&sql1,i,i);
 	}
 
-	Status status = sqlist_autoInsert(&sql1,5);
+	Status status = sqlist_autoInsert(&sql1,2);
 
 	if( status ){
 		for( i=0 ; i<sql_getLen(&sql1) ; i++ ){

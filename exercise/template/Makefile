@@ -1,12 +1,13 @@
 objects = main.o sqlist.o
+publicPath = ../public
 test : $(objects)
 	gcc -o test $(objects)
 
 main.o : main.c header.h
-	gcc -c main.c
+	gcc -c -g main.c
 
-sqlist.o : ./sequence-list/sqlist.c ./sequence-list/sqlist.h ./sequence-list/sqlist_elem_type.h
-	gcc -c ./sequence-list/sqlist.c
+sqlist.o : $(publicPath)/sequence-list/sqlist.c $(publicPath)/sequence-list/sqlist.h $(publicPath)/sequence-list/sqlist_elem_type.h
+	gcc -c -g $(publicPath)/sequence-list/sqlist.c
 
 clean-all :
 	rm test $(objects)

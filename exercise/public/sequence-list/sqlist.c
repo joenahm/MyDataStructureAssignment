@@ -67,6 +67,18 @@ void sql_insert(SqList *sql, int index, elem_type value){
 	sql->length++;
 }
 
+void sql_print(SqList *sql, int length){
+	if( length <= sql_getLen(sql) ){
+		int i;
+		for( i = 0 ; i < length ; i++ ){
+			printf(" %d", sql_get(sql,i));
+		}
+		putchar('\n');
+	}else{
+		fprintf(stderr, "WARNING(sqlist_print):invalid length !\n");
+	}
+}
+
 int sql_grow(SqList *sql, int size){
 	elem_type *temp;
 	int status;

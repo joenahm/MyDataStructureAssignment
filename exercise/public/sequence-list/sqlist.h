@@ -42,9 +42,14 @@ int sql_isFull(SqList *sql);
 
 elem_type sql_get(SqList *sql, int index);
 
+/* same as the default assignment operation */
 void sql_set(SqList *sql, int index, elem_type value);
-
+ 
+/*	call sql_set() to accomplish the assignment operation,
+*  	then increase the length of sqlist */
 void sql_insert(SqList *sql, int index, elem_type value);
+
+void sql_print(SqList *sql, int length);
 
 int sql_grow(SqList *sql, int size);
 
