@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../public/link-list/sllist.h"
+#include "../public/link-list/sllist.h"
 
 #endif

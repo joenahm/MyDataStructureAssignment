@@ -1,5 +1,5 @@
 objects = main.o sllist.o
-publicPath = ../../public
+publicPath = ../public
 test : $(objects)
 	gcc -o test $(objects)
 
