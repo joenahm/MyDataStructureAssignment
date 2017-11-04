@@ -29,8 +29,12 @@ A calculator supporting four arithmetic operations and parentheses.
 - #### 主要文件（Main File）: functions.c
 
 ## 习题:
-[点击跳转到习题文件夹](exercise/README.md) Click to jump to the exercise folder
+[点击跳转到习题文件夹](exercise) Click to jump to the exercise folder
 
 - [2.11[2] 将元素插入到非递减顺序表中，且不破坏其顺序](exercise/2.11.2)
 
 Insert data into an increment Sequence List without breaking its order
+
+- [2.12 [3] 比较两个顺序表(*A,B*)的大小](exercise/2.12.3)
+
+compare 2 sqlists(*A,B*)

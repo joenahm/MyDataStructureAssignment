@@ -6,8 +6,14 @@ This is a folder for the problems which are parts of my DataStructrue ExerciseBo
 **NOTE:Number in brackets represents the level of the problem,the bigger the harder**
 
 ## 题目如下:
-[2.11[2]](2.11.2/README.md)
+#### [2.11[2]](2.11.2)
 
 将元素插入到非递减顺序表中，且不破坏其顺序
 
 Insert data into an increment Sequence List without breaking its order
+
+#### [2.12 [3]](2.12.3)
+
+比较两个顺序表(*A,B*)的大小
+
+compare 2 sqlists(*A,B*)
