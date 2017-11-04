@@ -37,4 +37,8 @@ Insert data into an increment Sequence List without breaking its order
 
 - [2.12 [3] 比较两个顺序表(*A,B*)的大小](exercise/2.12.3)
 
-compare 2 sqlists(*A,B*)
+Compare 2 sqlists(*A,B*)
+
+- [2.19 [3] 删除非递减有序的链表中，大于minv小于maxv区间里的元素](exercise/2.19.3)
+
+Remove a interval between minv and maxv from a increment sllist
