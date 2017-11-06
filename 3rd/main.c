@@ -10,6 +10,6 @@ int main(int argc, char const *argv[]){
 	bt_init(&bt);
 	bt_create(&bt);	
 	bt_inOrderTraverse(bt,&visit);
-
+	bt_destroy(bt);
 	return 0;
 }

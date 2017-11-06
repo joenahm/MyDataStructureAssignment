@@ -18,10 +18,8 @@ int isNull(bt_elem_type value){
 }
 
 void freeNode(BTNode *node){
-	if( bt_isLeaf(*node) ){
-		printf("free the node of value: %d\n", getData(node->value));
-		free(node);
-	}
+	printf("free the node of value: %d\n", getData(node->value));
+	free(node);
 }
 /* private functions */
 
