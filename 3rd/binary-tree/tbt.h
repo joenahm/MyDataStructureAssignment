@@ -22,7 +22,6 @@
 
 void tbt_init(TBT *rootpp);
 void tbt_create(TBT *rootpp); 
-int tbt_isLeaf(TBTNode node);
 void tbt_preOrderTraverse(TBT rootp, void (*visit)(TBTNode *nodep));
 void tbt_inOrderTraverse(TBT rootp, void (*visit)(TBTNode *nodep));
 void tbt_postOrderTraverse(TBT rootp, void (*visit)(TBTNode *nodep));

@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]){
 	Stack nodes;
 	stack_init(&nodes);
 	tbt_inOrderThreading(bt,&nodes);
-	// tbt_inOrderTraverse(bt,&visit);
+	tbt_inOrderTraverse(bt,&visit);
 	tbt_destroy(bt);
 
 	return 0;

@@ -20,6 +20,7 @@ void getInput(tbt_elem_type *buffer){
 }
 
 void visit(TBTNode *nodep){
-	printf("%-6s : %d\n", tbt_isLeaf(*nodep)?"Leaf":"Branch", getData(nodep->value));
+	printf("%d\n", getData(nodep->value));
+	fflush(stdout);
 }
 /* public functions */
