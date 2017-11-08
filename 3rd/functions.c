@@ -9,7 +9,7 @@
 /* private functions */
 
 /* public functions */
-void getInput(bt_elem_type *buffer){
+void getInput(tbt_elem_type *buffer){
 	int temp = getchar();
 	if( temp != ' ' ){
 		buffer->data = temp - '0';
@@ -19,7 +19,7 @@ void getInput(bt_elem_type *buffer){
 	}
 }
 
-void visit(BTNode *nodep){
-	printf("%d %c\n", getData(nodep->value),bt_isLeaf(*nodep)?'y':'n');
+void visit(TBTNode *nodep){
+	printf("%-6s : %d\n", tbt_isLeaf(*nodep)?"Leaf":"Branch", getData(nodep->value));
 }
 /* public functions */

@@ -2,14 +2,18 @@
 	Author	: Joe Nahm
 	Email	: joenahm@yeah.net
 */
-#include "binary-tree/bt.h"
+#include "binary-tree/tbt.h"
 #include "functions.h"
 
 int main(int argc, char const *argv[]){
-	BT bt;
-	bt_init(&bt);
-	bt_create(&bt);	
-	bt_inOrderTraverse(bt,&visit);
-	bt_destroy(bt);
+	TBT bt;
+	tbt_init(&bt);
+	tbt_create(&bt);	
+	Stack nodes;
+	stack_init(&nodes);
+	tbt_inOrderThreading(bt,&nodes);
+	// tbt_inOrderTraverse(bt,&visit);
+	tbt_destroy(bt);
+
 	return 0;
 }

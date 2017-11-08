@@ -2,21 +2,23 @@
 #	Author	: Joe Nahm
 #	Email	: joenahm@yeah.net
 #
-objects = main.o bt.o functions.o
-bt : $(objects)
-	gcc -o bt $(objects)
+objects = main.o tbt.o functions.o stack.o
+tbt : $(objects)
+	gcc -o tbt $(objects)
 
-main.o : main.c ./binary-tree/bt.h functions.h
+main.o : main.c ./binary-tree/tbt.h functions.h
 	gcc -c -g main.c
 
-bt.o : ./binary-tree/bt.c ./binary-tree/bt.h ./binary-tree/bt_elem_type.h
-	gcc -c -g ./binary-tree/bt.c
+tbt.o : ./binary-tree/tbt.c ./binary-tree/tbt.h ./binary-tree/tbt_elem_type.h
+	gcc -c -g ./binary-tree/tbt.c
 
 functions.o : functions.c functions.h
 	gcc -c -g functions.c
 
+stack.o : ./stack/stack.c ./stack/stack.h ./stack/stack_elem_type.h
+	gcc -c -g ./stack/stack.c
 clean-all : 
-	rm bt $(objects)
+	rm tbt $(objects)
 
 clean-o :
 	rm $(objects)
