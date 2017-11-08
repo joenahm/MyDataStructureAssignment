@@ -107,9 +107,12 @@ void tbt_inOrderThreading(TBT treeNode, Stack *nodes){
 			if( temp->rChild == NULL ){
 				temp->rChild = treeNode;
 				temp->rTag = THREAD;
+				printf("thread : %d -> %d\n", getData(temp->value), getData(temp->rChild->value));
+				fflush(stdout);
 			}else if( treeNode->lChild == NULL ){
 				treeNode->lChild = temp;
 				treeNode->lTag = THREAD;
+				printf("thread : %d <- %d\n", getData(treeNode->lChild->value), getData(treeNode->value));
 			}
 
 			stack_pop(nodes);

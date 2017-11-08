@@ -25,7 +25,7 @@ void tbt_create(TBT *rootpp);
 void tbt_preOrderTraverse(TBT rootp, void (*visit)(TBTNode *nodep));
 void tbt_inOrderTraverse(TBT rootp, void (*visit)(TBTNode *nodep));
 void tbt_postOrderTraverse(TBT rootp, void (*visit)(TBTNode *nodep));
-void tbt_inOrderThreading(TBT treeNode, Stack *nodes);
+void tbt_inOrderThreading(TBT rootp, Stack *nodes);
 void tbt_destroy(TBT tree);
 
 int getData(tbt_elem_type value);
