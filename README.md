@@ -28,6 +28,16 @@ A calculator supporting four arithmetic operations and parentheses.
 ```
 - #### 主要文件（Main File）: functions.c
 
+> ### [#3rd](3rd)
+- #### 名称（Name）		： 二叉树的遍历和应用（Traverse and application of binary-tree）
+- #### 题目（Question）： 
+```
+通过输入的字符串先根序创建二叉树(create a binary-tree in pre-order)；
+中根序线索化二叉树(threading it in in-order)；
+对线索二叉树进行中根序遍历(traverse it in in-order)。
+```
+- #### 主要文件（Main File）: tbt.c
+
 ## 习题:
 [点击跳转到习题文件夹](exercise) Click to jump to the exercise folder
 
