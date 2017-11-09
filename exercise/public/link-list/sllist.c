@@ -16,6 +16,7 @@ void sll_print(SLList sll_node){
 	sll_node = sll_node->next;
 	while( sll_node != NULL ){
 		printf(" %d", sll_node->value);
+		fflush(stdout);
 
 		sll_node = sll_node->next;
 	}
