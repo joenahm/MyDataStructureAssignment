@@ -1,6 +1,6 @@
 # 2.12 [3]
 比较两个顺序表(*A,B*)的大小，比较算法为：<br>
-compare 2 sqlists(*A,B*), algorithm :
+Compare 2 sqlists(*A,B*), algorithm :
 
 ```
 （1）
