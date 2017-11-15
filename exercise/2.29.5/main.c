@@ -34,8 +34,12 @@ void delKeyVal(SqList *sqlA, int key, SqList *sqlB, int *iB, SqList *sqlC, int *
 		sql_setLen(sqlA,sql_getLen(sqlA)-1);
 	}
 
-	*iB += 1;
-	*iC += 1;
+	if( sql_get(sqlA,key)!=sql_get(sqlB,*iB)
+	&& sql_get(sqlA,key)!=sql_get(sqlC,*iC) ){
+		
+		*iB += 1;
+		*iC += 1;
+	}
 }
 
 void delVinBC(SqList *sqlA, SqList *sqlB, SqList *sqlC){
@@ -64,7 +68,7 @@ int main(int argc, char const *argv[]){
 	sql_insert(&sqlA,2,4);
 	sql_insert(&sqlA,3,5);
 	sql_insert(&sqlA,4,10);
-	sql_insert(&sqlA,5,11);
+	sql_insert(&sqlA,5,10);
 
 	sql_insert(&sqlB,0,3);
 	sql_insert(&sqlB,1,3);
