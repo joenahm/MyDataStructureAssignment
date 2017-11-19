@@ -60,3 +60,7 @@ Combine 2 link-lists sll1 and sll2, which are non-decreasing, to a non-increasin
 - [2.29 [5] 从顺序表A中删除所有同时也存在于顺序表B和顺序表C中的元素](exercise/2.29.5)
 
 Remove all of the elements which are also present in sqlist B and sqlist C from sqlist A
+
+- [3.19 [4] 括号匹配：()、[]和{}](exercise/3.19.4)
+
+Brackets Matching : () , [] and {}
