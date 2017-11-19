@@ -16,7 +16,6 @@ void sll_print(SLList sll_node){
 	sll_node = sll_node->next;
 	while( sll_node != NULL ){
 		printf(" %d", sll_node->value);
-		fflush(stdout);
 
 		sll_node = sll_node->next;
 	}
@@ -24,12 +23,13 @@ void sll_print(SLList sll_node){
 }
 
 void sll_insert(SLList sll_headNode, elem_type new_value){
-	register Node *current;
-	register Node **nextp = &(sll_headNode->next);
+	register Node *prev = sll_headNode;
+	register Node *current = prev->next;
 
 	/* Find a right place for insertion */
-	while( (current=*nextp)!= NULL && current->value<new_value ){
-		nextp = &current->next;
+	while( current != NULL && current->value<new_value ){
+		prev = current;
+		current = current->next;
 	}
 
 	/* init a new Node */
@@ -43,7 +43,7 @@ void sll_insert(SLList sll_headNode, elem_type new_value){
 
 	/* insert the new Node into the link-list */
 	new->next = current;
-	*nextp = new;
+	prev->next = new;
 }
 
 void sll_destroy(SLList sll_node){
