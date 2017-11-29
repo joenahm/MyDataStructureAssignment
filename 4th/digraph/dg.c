@@ -61,7 +61,6 @@ void edgePrint(int vertNum, EdgeNode *edge_node){
 
 /* public */
 void getInputVal(dg_elem_type *buffer){
-	fflush(stdin);
 	scanf("%c", buffer);
 }
 
@@ -103,7 +102,6 @@ void alg_create(ALGraph *alGraph){
 		int startVert;
 		scanf("%d", &startVert);
 		vertIndexCheck(&startVert,alGraph->vertAmt,j);
-		
 		printf("input the end vertex for edge [%d] : ", j);
 		fflush(stdout);
 		int endVert;

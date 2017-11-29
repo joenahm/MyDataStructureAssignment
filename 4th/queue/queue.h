@@ -28,7 +28,7 @@ typedef struct{
 } Queue;
 	
 void queue_init(Queue *queuep);
-int queuep_isEmpty(Queue *queuep);
+int queue_isEmpty(Queue *queuep);
 void queue_in(Queue *queuep, queue_elem_type value);
 void queue_out(Queue *queuep);
 queue_elem_type queue_getHead(Queue *queuep);
