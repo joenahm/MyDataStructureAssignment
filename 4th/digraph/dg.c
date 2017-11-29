@@ -62,6 +62,9 @@ void edgePrint(int vertNum, EdgeNode *edge_node){
 /* public */
 void getInputVal(dg_elem_type *buffer){
 	scanf("%c", buffer);
+	if( *buffer == '\n' ){
+		getInputVal(buffer);
+	}
 }
 
 void alg_init(ALGraph *alGraph){
