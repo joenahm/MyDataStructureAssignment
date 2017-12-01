@@ -76,3 +76,7 @@ Remove all of the elements which are also present in sqlist B and sqlist C from 
 - [3.19 [4] 括号匹配：()、[]和{}](exercise/3.19.4)
 
 Brackets Matching : () , [] and {}
+
+- [ 3.21 [3] 中缀表达式转逆波兰表达式](exercise/3.21.3)
+
+Transform an expression from nifix form to reverse polish form 
