@@ -41,3 +41,8 @@ Remove all of the elements which are also present in sqlist B and sqlist C from 
 括号匹配：()、[]和{}
 
 Brackets Matching : () , [] and {}
+
+#### [3.21 [3]](3.21.3)
+中缀表达式转逆波兰表达式
+
+Transform an expression from nifix form to reverse polish form 
