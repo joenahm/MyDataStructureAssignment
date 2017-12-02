@@ -77,6 +77,10 @@ Remove all of the elements which are also present in sqlist B and sqlist C from 
 
 Brackets Matching : () , [] and {}
 
-- [ 3.21 [3] 中缀表达式转逆波兰表达式](exercise/3.21.3)
+- [3.21 [3] 中缀表达式转逆波兰表达式](exercise/3.21.3)
 
 Transform an expression from nifix form to reverse polish form 
+
+- [3.28 [2] 实现只有尾指针的循环链队列的初始化、入队列和出队列](exercise/3.28.2)
+
+Implement the **Initialization**, **Enqueue**, **Dequeue** of a link-list-based round-robin queue
