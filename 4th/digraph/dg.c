@@ -15,36 +15,34 @@ int getAmt(char const *info){
 	return temp;
 }
 
+
 void vertAmtCheck(int *vertAmt, int inVertAmt){
-	if( inVertAmt > 0 && inVertAmt <= MAX_VERT_AMT ){
-		*vertAmt = inVertAmt;
-	}else{
+	while( inVertAmt <= 0 || inVertAmt > MAX_VERT_AMT ){
 		fprintf(stderr, "WARNING(vertAmtCheck): invalid amount of vertexes : %d !\n", inVertAmt);
 		fflush(stderr);
 		inVertAmt = getAmt("input the amount of vertexes");
-		vertAmtCheck(vertAmt,inVertAmt);
 	}
+	
+	*vertAmt = inVertAmt;
 }
 
 void edgeAmtCheck(int *edgeAmt, int inEdgeAmt){
-	if( inEdgeAmt > 0 ){
-		*edgeAmt = inEdgeAmt;
-	}else{
+	while( inEdgeAmt <= 0 ){
 		fprintf(stderr, "WARNING(edgeAmtCheck): invalid amount of edges : %d !\n", inEdgeAmt);
 		fflush(stderr);
 		inEdgeAmt = getAmt("input the amount of edges");
-		edgeAmtCheck(edgeAmt,inEdgeAmt);
 	}
+
+	*edgeAmt = inEdgeAmt;
 }
 
 void vertIndexCheck(int *vertIndex, int vertAmt, int orderNum){
-	if( *vertIndex < 0 || *vertIndex >= vertAmt ){
+	while( *vertIndex < 0 || *vertIndex >= vertAmt ){
 		fprintf(stderr, "WARNING(vertIndexCheck): invalid index for vertex : %d !\n", *vertIndex);
 		fflush(stderr);
 		printf("input the start vertex for edge [%d] : ", orderNum);
 		fflush(stdout);
 		scanf("%d", vertIndex);
-		vertIndexCheck(vertIndex,vertAmt,orderNum);
 	}
 }
 
@@ -61,10 +59,9 @@ void edgePrint(int vertNum, EdgeNode *edge_node){
 
 /* public */
 void getInputVal(dg_elem_type *buffer){
-	scanf("%c", buffer);
-	if( *buffer == '\n' ){
-		getInputVal(buffer);
-	}
+	do{
+		scanf("%c", buffer);
+	}while( *buffer == '\n' );
 }
 
 void alg_init(ALGraph *alGraph){
