@@ -4,25 +4,37 @@
 
 #define MAX 100
 
+typedef struct{
+	int value;
+	int index;
+} blockNode;
+
 int blockSearch(int *infoArr, int length, int key){
-	int index = 0;
 	int blockAmt = (int)sqrt(length);
-	int *blockArr = (int*)malloc(sizeof(int)*blockAmt);
+	blockNode *blockArr = (blockNode*)malloc(sizeof(blockNode)*blockAmt);
+
 	int maxElem = infoArr[0];
+	blockArr[0].index = 0;
+
 	int i,j;
 	for( i = 0, j = 0 ; i < length ; i++ ){
-		if( i!=0 && i%blockAmt == 0 ){
-			blockArr[j] = maxElem;
-			j++;	
-		}
-
 		if( infoArr[i] > maxElem ){
 			maxElem = infoArr[i];
+		}
+		
+		if( (i+1)%blockAmt == 0 ){
+			blockArr[j].value = maxElem;
+
+			if( j < blockAmt ){
+				j++;	
+				blockArr[j].index = i+1;
+			}
 		}
 	}
 	
 	for( i = 0 ; i < blockAmt ; i++ ){
-		printf(" %d", blockArr[i]);
+		printf(" %d", blockArr[i].value);
+		printf(" %d\n", blockArr[i].index);
 	}
 
 	free(blockArr);
