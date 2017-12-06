@@ -32,18 +32,17 @@ int blockSearch(int *infoArr, int length, int key){
 		}
 	}
 	
-	int index = -1;
+	int blockIndex = -1;
 	int flag = -1;
 	int low = 0;
 	int high = blockAmt-1;
 	while( low<=high ){
 		register int mid = (low+high)/2;
 		if( blockArr[mid].value >= key ){
-			if( blockArr[mid].value==key
-			|| blockArr[mid-1].value<key
-			|| blockAmt == 1 ){
+			if( blockArr[mid-1].value<key
+			|| mid == 0 ){
 
-				index = blockArr[mid].index;
+				blockIndex = blockArr[mid].index;
 				flag = blockArr[mid].value;
 				break;
 			}else{
@@ -54,9 +53,10 @@ int blockSearch(int *infoArr, int length, int key){
 		}
 	}
 
+	int index = -1;
 	if( flag != -1 ){
 		int i;
-		for( i = index ; infoArr[i] < flag ; i++ ){
+		for( i = blockIndex ; infoArr[i] <= flag ; i++ ){
 			if( infoArr[i] == key ){
 				index = i;
 				break;
@@ -83,7 +83,12 @@ int main(void){
 		scanf("%d", &inputArr[i]);
 	}
 
-	printf("%d", blockSearch(inputArr,size,1));
+	printf("input the key you want to search : ");
+	fflush(stdout);
+	int key;
+	scanf("%d", &key);
+
+	printf("%d", blockSearch(inputArr,size,key));
 
 	return 0;
 }
