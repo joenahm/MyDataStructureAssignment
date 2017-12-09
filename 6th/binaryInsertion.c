@@ -55,7 +55,7 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int n)){
 int main(int argc, char const *argv[]){
 	int a[999];
 	int size;
-	printf("input the sie : ");
+	printf("input the size : ");
 	fflush(stdout);
 	scanf("%d", &size);
 
