@@ -69,7 +69,7 @@ accomplish block search, using binary search between blocks, and using sequence 
 ```
 输入待排序序列；
 实现折半插入排序并输出;
-实现快速排序并输出。
+实现快速排序并输出。 
 accomplish binary insertion sort and quick sort.
 ```
 - #### 主要文件（Main File）: binaryInsertion.c, quick.c
