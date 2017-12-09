@@ -40,10 +40,10 @@ void quickSort(int *arr, int left, int right){
 
 
 void showSort(int *arr, int n, void (*sort)(int *arr, int left, int right)){
-	register int i;	
-	for( i = n-1 ; i >= 0 ; i-- ){
-		arr[n-1-i] = i;
-	}
+	// register int i;	
+	// for( i = n-1 ; i >= 0 ; i-- ){
+	// 	arr[n-1-i] = i;
+	// }
 	print(arr,n);
 	sort(arr,0,n-1);
 	print(arr,n);
@@ -51,8 +51,20 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int left, int right)){
 }
 
 int main(int argc, char const *argv[]){
-	int a[99];
+	int a[999];
+	int size;
+	printf("input the sie : ");
+	fflush(stdout);
+	scanf("%d", &size);
+
+	int i;
+	for( i = 0 ; i < size ; i++ ){
+		printf("input a[%d] : ", i);
+		fflush(stdout);
+		scanf("%d", &a[i]);
+	}
+
 	srand(time(NULL)); //call it before using !!
-	showSort(a,99,quickSort);
+	showSort(a,size,quickSort);
 	return 0;
 }

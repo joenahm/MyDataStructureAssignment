@@ -42,10 +42,10 @@ void binaryInsertionSort(int *arr, int n){
 }
 
 void showSort(int *arr, int n, void (*sort)(int *arr, int n)){
-	register int i;	
-	for( i = n-1 ; i >= 0 ; i-- ){
-		arr[n-1-i] = i;
-	}
+	// register int i;	
+	// for( i = n-1 ; i >= 0 ; i-- ){
+	// 	arr[n-1-i] = i;
+	// }
 	print(arr,n);
 	sort(arr,n);
 	print(arr,n);
@@ -53,7 +53,19 @@ void showSort(int *arr, int n, void (*sort)(int *arr, int n)){
 }
 
 int main(int argc, char const *argv[]){
-	int a[99];
-	showSort(a,99,binaryInsertionSort);
+	int a[999];
+	int size;
+	printf("input the sie : ");
+	fflush(stdout);
+	scanf("%d", &size);
+
+	int i;
+	for( i = 0 ; i < size ; i++ ){
+		printf("input a[%d] : ", i);
+		fflush(stdout);
+		scanf("%d", &a[i]);
+	}
+
+	showSort(a,size,binaryInsertionSort);
 	return 0;
 }

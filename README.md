@@ -1,7 +1,8 @@
 # My Data Structure Assignment
 数据结构作业(My data structure assignment at college)
 
-[![](https://img.shields.io/badge/%E4%B8%8A%E6%9C%BA%E6%8A%A5%E5%91%8A%E4%B8%8B%E8%BD%BD-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%BA%94%E7%94%A8-blue.svg?style=for-the-badge)](https://github.com/joenahm/MyDataStructureAssignment/raw/master/4th/4th.zip)
+[![](https://img.shields.io/badge/%E4%B8%8A%E6%9C%BA%E6%8A%A5%E5%91%8A%E4%B8%8B%E8%BD%BD-%E6%9F%A5%E6%89%BE%E7%BB%BC%E5%90%88-blue.svg?style=for-the-badge)](https://github.com/joenahm/MyDataStructureAssignment/raw/master/5th/5th.zip)
+[![](https://img.shields.io/badge/%E4%B8%8A%E6%9C%BA%E6%8A%A5%E5%91%8A%E4%B8%8B%E8%BD%BD-%E6%8E%92%E5%BA%8F%E7%BB%BC%E5%90%88-green.svg?style=for-the-badge)](https://github.com/joenahm/MyDataStructureAssignment/raw/master/6th/6th.zip)
 ## 作业:
 > ### [#1st](1st)
 - #### 名称（Name） 		: 顺序表和链表的应用（Application of Sequence List and Link List）
@@ -49,6 +50,29 @@ A calculator supporting four arithmetic operations and parentheses.
 (print the letters by using Breadth First Traversal)。
 ```
 - #### 主要文件（Main File）: dg.c
+
+> ### [#5th](5th)
+- #### 名称（Name）		： 查找综合（Search Synthesis）
+- #### 题目（Question）： 
+```
+输入查找表的所有数据，创建分块索引；
+块间查找采用折半查找；
+块内查找采用顺序查找；
+输入待查找的数据，实现分块查找。
+accomplish block search, using binary search between blocks, and using sequence search in block.
+```
+- #### 主要文件（Main File）: main.c
+
+> ### [#6th](6th)
+- #### 名称（Name）		： 排序综合（Sort Synthesis）
+- #### 题目（Question）： 
+```
+输入待排序序列；
+实现折半插入排序并输出;
+实现快速排序并输出。
+accomplish binary insertion sort and quick sort.
+```
+- #### 主要文件（Main File）: binaryInsertion.c, quick.c
 
 ## 习题:
 [点击跳转到习题文件夹](exercise) Click to jump to the exercise folder
